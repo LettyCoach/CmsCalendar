@@ -1,0 +1,340 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>CmsCalendar</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="Author" content="****">
+    <meta name="description" content="************************">
+    <meta name="keywords" content="Wordpress, CMS, Calendar ">
+    <link rel="shortcut icon" href="assets/images/tiktok.png">
+    <link rel="stylesheet" href="assets/css/calendar.css">
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+    <script src="/assets/js/calendar_common.js"></script>
+</head>
+
+<body>
+    <section id="container">
+        <div id="container-in-wide" class="clearfix">
+
+            <article id="contents" role="main">
+                <h1 class="title">Event calendar</h1>
+                <div id="contents-in">
+                    <div class="calendar-search-area">
+                        <div class="searchData">
+                            <div class="lefPart">
+                                <label for="eventSearchType">
+                                    種類で探す
+                                </label>
+                                <select name="eventSearchType" id="eventSearchType">
+                                    <option value=""></option>
+                                    <option value="115">Category_01</option>
+                                    <option value="116">Category_02</option>
+                                </select>
+                            </div>
+                            <div class="rightPart">
+                                <label for="eventSearchWord">
+                                    フリーワードで検索
+                                </label>
+                                <input type="text" id="eventSearchWord">
+                            </div>
+                        </div>
+                        <div class="searchButtons">
+                            <button class="searchButton" onclick="searchData()">この条件で検索</button>
+                            　　　
+                            <button class="initButton" onclick="searchInit()">条件をリセット</button>
+                        </div>
+
+                    </div>
+
+                    <div class="col2-area clearfix">
+                        <div class="right-col">
+                            <a href="javascript:switchCalendar()" class="changeCalendarType">
+                                <img src="assets/images/calendar_icon.png" alt="" style="width : 18px">
+                                カレンダー切り替え
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="calendar_title">
+                        <div class="left-col view-pc menu-width">
+
+                        </div>
+
+                        <div class="center-col">
+                            <h2 class="title" id="calendarTitle"></h2>
+                        </div>
+
+                        <p class="left-col view-sp">
+                            <a href="javascript:setCurrentYearMonth()" class="calGoCurrentMonth">
+                                今月
+                            </a>
+                        </p>
+                        <div class="right-col menu-width align-r">
+                            <a href="javascript:prevMonth()" class="calGoPrevMonth" style="vertical-align:bottom;">
+                                <img src="assets/images/arrow_left.png" alt="PrevMonth" class="arrowImage">
+                                前の月
+                            </a>
+                            :
+                            <a href="javascript:setCurrentYearMonth()" class="calGoCurrentMonth">今月</a>
+                            :
+                            <a href="javascript:nextMonth()" class="calGoNextMonth">
+                                次の月
+                                <img src="assets/images/arrow_right.png" alt="NexMonth" class="arrowImage">
+                            </a>
+                        </div>
+                    </div>
+                    <div id="calendar">
+                        <div class="calendar-box-area">
+                            <div id="calGridBlock" style="display: block;">
+                                <table class="calendar-area" id="calGridTable">
+                                    <thead>
+                                        <tr class="week-row">
+                                            <th class="sun">日曜</th>
+                                            <th class="back-green">月曜</th>
+                                            <th>火曜</th>
+                                            <th>水曜</th>
+                                            <th>木曜</th>
+                                            <th>金曜</th>
+                                            <th class="sat">土曜</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="calGridTableBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="calDateBlock" class="calendar-list-area" style="display: block">
+                            <table id="calListTable">
+                                <thead>
+                                    <tr class="week-row">
+                                        <th>月</th>
+                                        <th>曜日</th>
+                                        <th>イベント</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="calListTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+
+<script>
+    var initYear = 2023, initMonth = 2;
+    var crtYear = initYear, crtMonth = initMonth, selCalendar = 1;
+    var searchType = "", searchWord = "";
+    var calendarData = {};
+    var weekName_JP = ['日曜', '月曜', '火曜', '水曜', '木曜', '金曜', '土曜'];
+    var weekdayName = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
+    setCalendarTitle = () => {
+        const [eram, jpYear] = calendarCommon.getJPYearMain(crtYear, crtMonth, 1);
+        $('#calendarTitle').html(`${crtYear}年 (${era} ${jpYear}年) ${crtMonth}月 のカレンダー`);
+    }
+    searchData = () => {
+        searchType = $('#eventSearchType').val();
+        searchWord = $('#eventSearchWord').val();
+        updateCalendar();
+    }
+
+    searchInit = () => {
+        $('#eventSearchType').val("");
+        $('#eventSearchWord').val("");
+        searchData();
+    }
+
+    switchCalendar = () => {
+        selCalendar = 1 - selCalendar;
+        switchCalendarDisplay();
+    }
+
+    switchCalendarDisplay = () => {
+        if (selCalendar === 0) {
+            $('#calGridBlock').hide();
+            $('#calDateBlock').show();
+        }
+        else {
+            $('#calGridBlock').show();
+            $('#calDateBlock').hide();
+        }
+    }
+
+    setCurrentYearMonth = () => {
+        crtYear = initYear, crtMonth = initMonth;
+        updateCalendar();
+    }
+
+    prevMonth = () => {
+        let rlt = calendarCommon.getPrevMonthDate(crtYear, crtMonth);
+        crtYear = rlt.getFullYear();
+        crtMonth = rlt.getMonth() + 1;
+        updateCalendar();
+    }
+
+    nextMonth = () => {
+        let rlt = calendarCommon.getNextMonthDate(crtYear, crtMonth);
+        crtYear = rlt.getFullYear();
+        crtMonth = rlt.getMonth() + 1;
+        updateCalendar();
+    }
+
+    $(function () {
+        $.getJSON("/assets/js/calendar.json", function (json) {
+            calendarData = json;
+            console.log(calendarData);
+            updateCalendar();
+        });
+    });
+
+    updateCalendar = () => {
+        setCalendarTitle();
+        switchCalendarDisplay();
+        let calendarMonthDates = calendarCommon.getCalendarMonthDates(crtYear, crtMonth)
+        console.log(calendarMonthDates);
+
+        let stDateStr = calendarMonthDates[0].str, edDateStr = calendarMonthDates[calendarMonthDates.length - 1].str;
+
+        let rltSearch = {};
+        for (let i = 0; i < calendarData.length; i++) {
+            let obj = calendarData[i];
+            if (obj.edDate < stDateStr) continue;
+            if (obj.stDate > edDateStr) continue;
+            if (obj.title.toLowerCase().includes(searchWord.toLowerCase()) == false) continue;
+            if (searchType != "") {
+                const found = obj.category.find(e => e == searchType);
+                if (found == undefined) continue;
+            }
+            for (let tDate = obj.stDate; tDate <= obj.edDate; tDate = calendarCommon.getNextDateStr(tDate)) {
+                if (tDate < stDateStr || tDate > edDateStr) continue;
+
+                if (rltSearch[tDate] == undefined) {
+                    rltSearch[tDate] = [];
+                }
+                rltSearch[tDate].push(obj)
+            }
+        }
+        console.log(rltSearch);
+
+
+        let htmlData = "";
+
+        for (let i = 0; i < calendarMonthDates.length / 7; i++) {
+
+            let tmp = "";
+            for (let j = i * 7; j < (i + 1) * 7; j++) {
+
+                let tdClass = "";
+                if (j % 7 == 0) tdClass = "day-sun";
+                if ((j + 1) % 7 == 0) tdClass = "day-sat";
+                let addData = "", addClass = "";
+                let holiday = calendarCommon.getHolidayName(crtYear, crtMonth, calendarMonthDates[j].num);
+                let holidayTmp = "";
+                if (holiday != false) {
+                    addClass = " holiday";
+                    holidayTmp = makeHTML('span', holiday, "holidayName", "");
+                }
+
+                tmp += makeHTML('td', calendarMonthDates[j].num + holidayTmp, tdClass + addClass, "");
+            }
+            htmlData += makeHTML('tr', tmp, "col-day calGridRow", "");
+
+            let maxCnt = 1;
+            for (let j = i * 7; j < (i + 1) * 7; j++) {
+                let jObj = calendarMonthDates[j];
+                let dateStr = jObj.str;
+                if (rltSearch[dateStr] == undefined) continue;
+                maxCnt = Math.max(maxCnt, rltSearch[dateStr].length);
+            }
+
+            for (let k = 0; k < maxCnt; k++) {
+
+                tmp = ""
+                for (let j = i * 7; j < (i + 1) * 7; j++) {
+                    let jObj = calendarMonthDates[j];
+                    let dateStr = jObj.str;
+                    if (rltSearch[dateStr] == undefined || rltSearch[dateStr].length <= k) {
+                        tmp += makeHTML('td style = "height : 80px"', "", "", "");
+                        continue;
+                    }
+
+                    let spanCnt = 1;
+                    if ((j + 1) % 7 != 0) {
+
+                        let eventObj = rltSearch[dateStr][k];
+                        while (true) {
+                            let nextDateStr = calendarMonthDates[j + 1].str;
+                            if (rltSearch[nextDateStr] == undefined) break;
+                            if (rltSearch[nextDateStr][k] == undefined) break;
+                            let nexEventObj = rltSearch[nextDateStr][k];
+                            if (eventObj.id != nexEventObj.id) break;
+
+                            spanCnt++;
+                            j++;
+                            if ((j + 1) % 7 == 0) break;
+                        }
+                    }
+
+
+                    let jTmp = "";
+                    let eventObj = rltSearch[dateStr][k];
+                    jTmp = makeHTML(`a href = "${eventObj.url}"`, eventObj.title, "", "");
+                    jTmp = makeHTML('p', jTmp, "event_apply_status_none", "");
+                    jTmp = makeHTML(`td colspan = ${spanCnt}`, jTmp, "", "");
+                    tmp += jTmp;
+                }
+
+                htmlData += makeHTML('tr', tmp, "col calGridRow", "");
+            }
+
+        }
+
+        $("#calGridTableBody").html(htmlData);
+
+        htmlData = "";
+        let finishDate = calendarCommon.getMonthLastMday(crtYear, crtMonth);
+        for (let i = 1; i <= finishDate; i++) {
+            let crtDate = new Date(crtYear, crtMonth - 1, i);
+            let dateStr = calendarCommon.convertDate2String(crtDate);
+            let tmp = "";
+            tmp += makeHTML('td', i, "date", "");
+            tmp += makeHTML('td', weekName_JP[crtDate.getDay()], "", "");
+
+            let sonTmp = "";
+            let holiday = calendarCommon.getHolidayName(crtYear, crtMonth, i);
+            if (holiday != false) {
+                sonTmp += makeHTML('span style = "color : red"', holiday, "", "");
+            }
+
+            if (rltSearch[dateStr] != undefined) {
+                for (let j = 0; j < rltSearch[dateStr].length; j++) {
+                    let obj = rltSearch[dateStr][j];
+                    let sonTmpStr = "";
+                    sonTmpStr = makeHTML(`a href = "${obj.url}"`, obj.title, "", "");
+                    sonTmp += makeHTML('div', sonTmpStr, "calPageLink event_apply_status_none", "");
+                }
+            }
+
+
+            tmp += makeHTML('td', sonTmp, "", "");
+            htmlData += makeHTML('tr', tmp, `calListRow calListWeekday ${weekdayName[crtDate.getDay()]}`, "");
+        }
+
+        $("#calListTableBody").html(htmlData);
+    }
+
+    makeHTML = (tagName, value, className = "", IdName = "") => {
+        let rlt = "";
+        rlt += `<${tagName} class = '${className}' id = '${IdName}'>`;
+        rlt += value;
+        rlt += `</${tagName.split(' ')[0]}>`;
+
+        return rlt;
+    }
+</script>
+
+</html>

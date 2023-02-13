@@ -404,7 +404,7 @@ h6,
     margin-top: 10px;
     margin-left: 30px;
     padding: 5px 5px 5px 15px;
-    background-image: url("../img_common/blockquote.png");
+    background-image: url("../images/blockquote.png");
     background-position: left top;
     background-repeat: no-repeat;
     background-color: #eee;
@@ -433,7 +433,7 @@ body {
 
 @media screen and (max-width: 768px) {
     body {
-        font-size: 170% !important;
+        /* font-size: 170% !important; */
     }
 }
 
@@ -763,7 +763,7 @@ screen and (min-width: 769px) {
     }
 
     #header {
-        background-image: url(../img_common/header_bg.png);
+        /* background-image: url(../images/header_bg.png); */
         background-repeat: repeat-x;
     }
 
@@ -799,7 +799,7 @@ screen and (min-width: 769px) {
     }
 
     #header #header-in .header-subnav-area .list .home {
-        background-image: url(../img_common/pc_header_subnav_area_arrow.png);
+        background-image: url(../images/pc_header_subnav_area_arrow.png);
         background-repeat: no-repeat;
         padding-left: 20px;
     }
@@ -831,7 +831,7 @@ header（SP）
 ==================================*/
 @media screen and (max-width: 768px) {
     #sp-header {
-        background-image: url(../img_common/header_bg.png);
+        background-image: url(../images/header_bg.png);
         background-repeat: repeat-x;
         /* モーダル */
     }
@@ -955,7 +955,7 @@ header（SP）
         display: block;
         padding: 15px;
         padding-right: 40px;
-        background-image: url(../img_common/arrow03.svg);
+        background-image: url(../images/arrow03.svg);
         background-repeat: no-repeat;
         background-position: right 20px top 50%;
         color: #000;
@@ -966,7 +966,7 @@ header（SP）
 
     #sp-header .modal-search .title,
     #sp-header .modal-menu .title {
-        background-image: url(../img_common/modal_menu_btn_plus.png), url(../img_common/modal_menu_icon_search.png);
+        background-image: url(../images/modal_menu_btn_plus.png), url(../images/modal_menu_icon_search.png);
         background-repeat: no-repeat, no-repeat;
         background-position: right 20px top 50%, 20px 50%;
         padding: 15px 30px 15px 55px;
@@ -977,7 +977,7 @@ header（SP）
 
     #sp-header .modal-search .on,
     #sp-header .modal-menu .on {
-        background-image: url(../img_common/modal_menu_btn_minus.png), url(../img_common/modal_menu_icon_search.png);
+        background-image: url(../images/modal_menu_btn_minus.png), url(../images/modal_menu_icon_search.png);
     }
 
     #sp-header .modal-search .list2 li,
@@ -992,7 +992,7 @@ header（SP）
     #sp-header .modal-menu .list2 li a {
         display: block;
         padding: 15px 25px 15px 70px;
-        background-image: url(../img_common/arrow03.svg);
+        background-image: url(../images/arrow03.svg);
         background-repeat: no-repeat;
         background-position: right 20px top 50%;
         text-decoration: none;
@@ -1001,17 +1001,17 @@ header（SP）
 
     #sp-header .modal-search .list2 .icon1,
     #sp-header .modal-menu .list2 .icon1 {
-        background-image: url(../img_common/modal_menu_icon_hospital.png);
+        background-image: url(../images/modal_menu_icon_hospital.png);
     }
 
     #sp-header .modal-search .list2 .icon2,
     #sp-header .modal-menu .list2 .icon2 {
-        background-image: url(../img_common/modal_menu_icon_star.png);
+        background-image: url(../images/modal_menu_icon_star.png);
     }
 
     #sp-header .modal-search .list2 .icon3,
     #sp-header .modal-menu .list2 .icon3 {
-        background-image: url(../img_common/modal_menu_icon_child.png);
+        background-image: url(../images/modal_menu_icon_child.png);
     }
 
     #sp-header .modal-search .in {
@@ -1359,7 +1359,7 @@ screen and (min-width: 769px) {
     border-radius: 2px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
-    background: #F4CE69 url(../img_common/arrow_white.png) no-repeat 15px center;
+    background: #F4CE69 url(../images/arrow_white.png) no-repeat 15px center;
     color: #000;
     font-size: 60%;
     text-decoration: none;
@@ -1410,7 +1410,7 @@ screen and (min-width: 769px) {
     float: left;
     clear: both;
     padding-left: 32px;
-    background: url(../img_common/arrow05.svg) no-repeat 10px center;
+    background: url(../images/arrow05.svg) no-repeat 10px center;
 }
 
 .news-area .list li .text {
@@ -1442,7 +1442,7 @@ screen and (min-width: 769px) {
 }
 
 .anchor li a {
-    background: url(../img_common/arrow05.svg) no-repeat left 3px;
+    background: url(../images/arrow05.svg) no-repeat left 3px;
     display: inline-block;
     padding-left: 10px;
 }
@@ -1620,7 +1620,7 @@ google map
 
 .map-link a {
     padding-left: 15px;
-    background: url(../img_common/arrow01.png) no-repeat 0 5px;
+    background: url(../images/arrow01.png) no-repeat 0 5px;
 }
 
 /*==================================
@@ -1858,7 +1858,7 @@ screen and (min-width: 769px) {
     border-radius: 2px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
-    background: #F4CE69 url(../img_common/arrow_white.png) no-repeat 15px center;
+    background: #F4CE69 url(../images/arrow_white.png) no-repeat 15px center;
     color: #333;
     font-weight: bold;
     text-decoration: none;
@@ -1938,7 +1938,7 @@ screen and (min-width: 769px) {
     border-radius: 2px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
-    background: #F4CE69 url(../img_common/arrow_white.png) no-repeat 15px center;
+    background: #F4CE69 url(../images/arrow_white.png) no-repeat 15px center;
     color: #333;
     font-weight: bold;
     text-decoration: none;
@@ -2214,7 +2214,7 @@ screen and (min-width: 769px) {
 }
 
 .toiawase .mail {
-    background-image: url(../img_common/arrow04.svg);
+    background-image: url(../images/arrow04.svg);
     background-repeat: no-repeat;
     background-position: 0 calc(0.5em - 2px);
     padding-left: 12px;
@@ -2629,6 +2629,7 @@ screen and (min-width: 769px) {
     box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
     transform: translateY(0);
 }
+
 .calGoCurrentMonth {
     text-decoration: none;
 }
@@ -2673,13 +2674,13 @@ screen and (min-width: 769px) {
     flex-direction: row;
     justify-content: space-between;
     margin: 0;
+    padding-bottom: 20px;
 }
 
 .menu-width {
     width: 180px;
 
     padding-top: 30px;
-    
 }
 
 .align-r {
@@ -2693,6 +2694,11 @@ screen and (min-width: 769px) {
     color: white;
 }
 
+.week-row th {
+    font-size: 18px;
+    padding: 8px 0px;
+}
+
 #calendarTitle {
     font-size: 32px;
 }
@@ -2701,7 +2707,8 @@ screen and (min-width: 769px) {
     padding: 20px 0px;
 }
 
-.calGoPrevMonth img, .calGoNextMonth img{
+.calGoPrevMonth img,
+.calGoNextMonth img {
     padding-top: 3px;
 }
 
@@ -2709,6 +2716,60 @@ screen and (min-width: 769px) {
     width: 12px;
     height: 16px;
 }
+
+@media screen and (max-width: 769px) {
+    .calendar_title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menu-width {
+        width: 100%;
+    }
+
+    .calendar_title a {
+        font-size: 14px;
+    }
+
+    #calendarTitle {
+        text-align: center;
+        line-height: 150%;
+    }
+
+    .searchData {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .searchData label {
+        width: 200px;
+    }
+
+    .searchData .leftPart {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .searchData .rightPart {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .searchButtons {
+        padding: 0px 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+}
+
+
+
 
 @media screen and (max-width: 768px) {
 
@@ -2788,7 +2849,7 @@ screen and (min-width: 769px) {
 
 .event-result-area .title {
     border-bottom: 2px solid #73b2a1;
-    background: url(../img_common/arrow01.png) no-repeat 0.5em center;
+    background: url(../images/arrow01.png) no-repeat 0.5em center;
     padding-bottom: 2px;
 }
 
@@ -2933,7 +2994,7 @@ screen and (min-width: 769px) {
     border-radius: 2px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
-    background: #F4CE69 url(../img_common/arrow_white.png) no-repeat 15px center;
+    background: #F4CE69 url(../images/arrow_white.png) no-repeat 15px center;
     color: #000;
     font-size: 90%;
     text-align: center;
@@ -3354,7 +3415,7 @@ gogleマップ
 
 #container-in-wide #calendar .col3-area .left-col a {
     padding: 0 0 0 15px;
-    background: url(../img_common/eventcalendar_icon_back.png) no-repeat left center;
+    background: url(../images/eventcalendar_icon_back.png) no-repeat left center;
 }
 
 #container-in-wide #calendar .col3-area .right-col .list .back {
@@ -3365,7 +3426,7 @@ gogleマップ
 
 #container-in-wide #calendar .col3-area .right-col .list .back a {
     padding: 0 0 0 15px;
-    background: url(../img_common/eventcalendar_icon_back.png) no-repeat left center;
+    background: url(../images/eventcalendar_icon_back.png) no-repeat left center;
 }
 
 #container-in-wide #calendar .col3-area .right-col .list .next {
@@ -3375,7 +3436,7 @@ gogleマップ
 
 #container-in-wide #calendar .col3-area .right-col .list .next a {
     padding: 0 15px 0 0;
-    background: url(../img_common/eventcalendar_icon_next.png) no-repeat right center;
+    background: url(../images/eventcalendar_icon_next.png) no-repeat right center;
 }
 
 @media print,
@@ -3565,7 +3626,7 @@ screen and (min-width: 769px) {
 }
 
 #container-in-wide .calendar-list-area table {
-    margin: 10px 0 0 1px;
+    margin: 0px 0 0 1px;
     width: 100%;
 }
 
@@ -3580,6 +3641,11 @@ screen and (min-width: 769px) {
     border-collapse: collapse;
     padding: 5px;
     background: none;
+}
+
+#container-in-wide .calendar-list-area table th {
+    padding: 10px;
+    font-weight: bold;
 }
 
 #container-in-wide .calendar-list-area table .date,
@@ -3621,13 +3687,27 @@ screen and (min-width: 769px) {
     background: #bbb url(../images/calendar_tbl_bg.png) repeat-y left top;
 }
 
+
+@media screen and (max-width: 768px) {
+
+    #container-in-wide .calendar-box-area table {
+        width: 100%;
+        margin-top: 0px;
+        color: #333333;
+        border-spacing: 0;
+        border-right: none;
+        background: #bbb url(../images/calendar_tbl_bg.png) repeat-y left top;
+        background-size: 100% 1px;
+    }
+}
+
 #container-in-wide .calendar-box-area table .week-row th {
     /* background: url(../images/calendar_week_bg.png) repeat-y 1px top; */
     color: inherit;
-    padding: 8px 0;
+    /* padding: 8px 0; */
     border: 1px solid #bbb;
-    width: 137px;
-    font-size: 110%;
+    width: 14.28%;
+    /* font-size: 110%; */
     font-weight: bold;
 }
 
@@ -3642,12 +3722,12 @@ screen and (min-width: 769px) {
 }
 
 #container-in-wide .calendar-box-area table td {
-    width: 134px;
+    width: 14.28%;
     vertical-align: top;
 }
 
 #container-in-wide .calendar-box-area table .day-sat {
-    width: 138px;
+    width: 14.28%;
 }
 
 #container-in-wide .calendar-box-area table .col td {
@@ -3782,7 +3862,7 @@ notfoundページ
 
 .pubcom-list-area .title {
     padding-left: 15px;
-    background: url(../img_common/arrow01.png) no-repeat left center;
+    background: url(../images/arrow01.png) no-repeat left center;
     font-weight: bold;
 }
 
@@ -4023,7 +4103,7 @@ screen and (min-width: 769px) {
 }
 
 #contents-large-category .side-nav-list .list li {
-    background: url(../img_common/arrow04.svg) no-repeat 0 5px;
+    background: url(../images/arrow04.svg) no-repeat 0 5px;
     margin-top: 10px;
     padding-left: 15px;
 }
@@ -4855,7 +4935,7 @@ screen and (min-width: 769px) {
 }
 
 .title-list-parts li {
-    background: url(../img_common/common_arrow_green.png) no-repeat 0 5px;
+    background: url(../images/common_arrow_green.png) no-repeat 0 5px;
     margin-top: 10px;
     padding-left: 13px;
     float: left;
@@ -5048,7 +5128,7 @@ screen and (min-width: 769px) {
 #boshu-list-area .boshu-list .in .title,
 #boshu-list-area .boshu-list-other .in .title {
     padding-left: 15px;
-    background: url(../img_common/arrow01.png) no-repeat left 0.5em;
+    background: url(../images/arrow01.png) no-repeat left 0.5em;
     font-weight: bold;
 }
 
@@ -5189,7 +5269,7 @@ screen and (min-width: 769px) {
 }
 
 .backnumber-area .last-year-block .list li {
-    background: url(../img_common/common_arrow_green.png) no-repeat 0 5px;
+    background: url(../images/common_arrow_green.png) no-repeat 0 5px;
     margin-top: 10px;
     padding-left: 13px;
     float: left;
@@ -6030,7 +6110,7 @@ screen and (min-width: 769px) {
 }
 
 .side-nav-list li {
-    background: url(../img_common/arrow04.svg) no-repeat 0 5px;
+    background: url(../images/arrow04.svg) no-repeat 0 5px;
     margin-top: 10px;
     padding-left: 15px;
 }
@@ -6075,152 +6155,59 @@ screen and (min-width: 769px) {
 /*==================================
 フッター
 ==================================*/
-@media print,
-screen and (min-width: 769px) {
-    footer {
-        margin-top: 100px;
-    }
 
-    footer .box {
-        width: 940px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    footer .box .footer-nav {
-        float: left;
-        width: 670px;
-        padding-top: 40px;
-    }
-
-    footer .box .footer-nav li {
-        float: left;
-        margin-left: 10px;
-    }
-
-    footer .box .footer-nav li:first-child {
-        margin-left: 0;
-    }
-
-    footer .box .footer-nav2 {
-        float: left;
-        padding-top: 37px;
-        width: 120px;
-    }
-
-    footer .box .footer-nav2 li {
-        float: left;
-        margin-left: 18px;
-    }
-
-    footer .box .footer-nav2 li:first-child {
-        margin-left: 0;
-    }
-
-    footer .copyright {
-        padding-bottom: 20px;
-        background-color: #2E1C00;
-        color: #fff;
-        font-size: 12px;
-        text-align: center;
-        position: absolute;
-        width: 100%;
-        padding-top: 75px;
-        background-image: url(../img_common/footer_bg.png);
-        background-repeat: repeat-x;
-        background-position: 0 bottom;
-    }
-
-    footer #pagetop-pc {
-        width: 89px;
-        float: left;
-        margin-left: 17px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    footer {
-        margin-top: 35px;
-    }
-
-    footer .box {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    footer .box .footer-nav {
-        width: 600px;
-        margin: 0 auto;
-    }
-
-    footer .box .footer-nav li {
-        display: inline-block;
-        vertical-align: top;
-        width: 285px;
-        text-align: center;
-    }
-
-    footer .box .footer-nav li a {
-        display: block;
-    }
-
-    footer .box .footer-nav2 {
-        float: right;
-    }
-
-    footer .box .footer-nav2 li {
-        float: left;
-        margin-left: 18px;
-    }
-
-    footer .box .footer-nav2 li:first-child {
-        margin-left: 0;
-    }
-
-    footer .copyright {
-        padding-bottom: 20px;
-        background-color: #2E1C00;
-        color: #fff;
-        font-size: 12px;
-        text-align: center;
-        position: absolute;
-        width: 100%;
-        padding-top: 75px;
-        background-image: url(../img_common/footer_bg.png);
-        background-repeat: repeat-x;
-        background-position: 0 bottom;
-    }
-
-    footer #pagetop-pc {
-        width: 89px;
-        float: left;
-        margin-left: 17px;
-    }
-}
 
 /*++++++++++++++++++++++++++++++++++
  * 下層ページのコンテンツエリア専用CSS（プリント用）
  * @version 0.0.1
 ++++++++++++++++++++++++++++++++++*/
-@media print {
-    body {
-        background-color: transparent;
+
+#calGridBlock {
+    overflow-x: scroll;
+}
+
+#calGridTable {
+    min-width: 720px;
+}
+
+.week-row th {
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+
+
+    .event_apply_status_none {
+        padding: 2px;
     }
 
-    * {
-        zoom: 0.97;
+    .event_apply_status_none a {
+        font-size: 11px;
+        line-height: 150%;
     }
 
-    #contents {
-        width: 700px;
+    .col-day {
+        height: 14px;
     }
 
-    #header-print,
-    #pankuzu,
-    #side-nav,
-    #pagetop,
-    .footerPrint,
-    #keyword-area {
-        display: none;
+    .col-day td,
+    .holiday {
+        font-size: 12px;
+        padding: 2px
     }
+
+}
+
+
+@media screen and (max-width: 520px) {
+
+
+    .week-row .th {
+        font-size: 14px;
+    }
+
+}
+
+.calPageLink a {
+    padding: 3px 12px;
 }

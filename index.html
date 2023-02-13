@@ -18,20 +18,25 @@
 <body>
     <section id="container">
         <div id="container-in-wide" class="clearfix">
-
             <article id="contents" role="main">
-                <h1 class="title">Event calendar</h1>
                 <div id="contents-in">
                     <div class="calendar-search-area">
                         <div class="searchData">
-                            <div class="lefPart">
+                            <div class="leftPart">
                                 <label for="eventSearchType">
                                     種類で探す
                                 </label>
                                 <select name="eventSearchType" id="eventSearchType">
                                     <option value=""></option>
-                                    <option value="115">Category_01</option>
-                                    <option value="116">Category_02</option>
+                                    <?php
+                                    foreach($cats as $cat) {
+                                  ?>
+                                    <option value="<?php echo $cat->term_id ?>">
+                                        <?php echo $cat->name ?>
+                                    </option>
+                                    <?php
+                                    }
+                                  ?>
                                 </select>
                             </div>
                             <div class="rightPart">
@@ -52,29 +57,22 @@
                     <div class="col2-area clearfix">
                         <div class="right-col">
                             <a href="javascript:switchCalendar()" class="changeCalendarType">
-                                <img src="assets/images/calendar_icon.png" alt="" style="width : 18px">
+                                <img src="assets/images/calendar_icon.png"
+                                    alt="" style="width : 18px">
                                 カレンダー切り替え
                             </a>
                         </div>
                     </div>
 
                     <div class="calendar_title">
-                        <div class="left-col view-pc menu-width">
-
-                        </div>
-
+                        <div class="left-col view-pc menu-width"></div>
                         <div class="center-col">
                             <h2 class="title" id="calendarTitle"></h2>
                         </div>
-
-                        <p class="left-col view-sp">
-                            <a href="javascript:setCurrentYearMonth()" class="calGoCurrentMonth">
-                                今月
-                            </a>
-                        </p>
                         <div class="right-col menu-width align-r">
                             <a href="javascript:prevMonth()" class="calGoPrevMonth" style="vertical-align:bottom;">
-                                <img src="assets/images/arrow_left.png" alt="PrevMonth" class="arrowImage">
+                                <img src="assets/images/arrow_left.png"
+                                    alt="PrevMonth" class="arrowImage">
                                 前の月
                             </a>
                             :
@@ -82,7 +80,8 @@
                             :
                             <a href="javascript:nextMonth()" class="calGoNextMonth">
                                 次の月
-                                <img src="assets/images/arrow_right.png" alt="NexMonth" class="arrowImage">
+                                <img src="assets/images/arrow_right.png"
+                                    alt="NexMonth" class="arrowImage">
                             </a>
                         </div>
                     </div>
@@ -109,7 +108,7 @@
                             <table id="calListTable">
                                 <thead>
                                     <tr class="week-row">
-                                        <th>月</th>
+                                        <th>日</th>
                                         <th>曜日</th>
                                         <th>イベント</th>
                                     </tr>
